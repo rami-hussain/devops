@@ -1,0 +1,11 @@
+terraform.tfstate.backup
+terraform.tfstate
+yasir-hussain_accessKeys (1).csv
+.terraform
+./vpc/.terraform
+./vpc/terraform*.*
+./modules/terraform*.*
+.terraform.lock.hcl
+
+
+

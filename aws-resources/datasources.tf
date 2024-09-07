@@ -33,41 +33,41 @@ data "aws_subnet" "private_subnets" {
 }
 
 
-# data "aws_subnet" "public_subnet_a" {
-#   vpc_id = data.aws_vpc.urs2-vpc.id
+ data "aws_subnet" "public_subnet_a" {
+ vpc_id = data.aws_vpc.my-vpc.id
 
-#   filter {
-#     name   = "tag:Environment"
-#     values = [var.environment]
-#   }
-#   filter {
-#     name   = "tag:Name"
-#     values = ["${var.name}-${var.environment}-vpc-public-eu-west-2a"]
-#   }
-
-#   filter {
-#     name   = "tag:Product"
-#     values = [var.product]
-#   }
-# }
-
-# data "aws_subnet" "public_subnet_b" {
-#   vpc_id = data.aws_vpc.urs2-vpc.id
-
-#   filter {
-#     name   = "tag:Environment"
-#     values = [var.environment]
-#   }
-#   filter {
-#     name   = "tag:Name"
-#     values = ["${var.name}-${var.environment}-vpc-public-eu-west-2b"]
-#   }
+  filter {
+    name   = "tag:Environment"
+    values = ["dev"]
+  }
+  filter {
+    name   = "tag:Name"
+    values = ["my-vpc-public-eu-west-1a"]
+  }
 
 #   filter {
 #     name   = "tag:Product"
 #     values = [var.product]
 #   }
-# }
+ }
+
+ data "aws_subnet" "public_subnet_b" {
+vpc_id = data.aws_vpc.my-vpc.id
+
+  filter {
+    name   = "tag:Environment"
+    values = ["dev"]
+  }
+  filter {
+    name   = "tag:Name"
+    values = ["my-vpc-public-eu-west-1b"]
+  }
+
+#   filter {
+#     name   = "tag:Product"
+#     values = [var.product]
+#   }
+ }
 
 # data "aws_ami" "amazon_linux_2" {
 #   most_recent = true

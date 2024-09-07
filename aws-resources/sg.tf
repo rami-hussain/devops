@@ -10,6 +10,6 @@ module "fixed_name_sg" {
 
   use_name_prefix = false
 
-  ingress_cidr_blocks = ["10.10.0.0/16"]
-  ingress_rules       = ["ssh-tcp"]
+  ingress_cidr_blocks = ["10.0.0.0/16","0.0.0.0/0"]
+  ingress_rules       = ["http-80-tcp"]
 }
